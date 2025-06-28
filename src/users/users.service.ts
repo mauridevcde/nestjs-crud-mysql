@@ -35,6 +35,7 @@ export class UsersService {
       where: {
         id: id,
       },
+      relations: ['posts', 'profile'], // Assuming you want to load related posts
     });
 
     if (!userFound) {
@@ -73,4 +74,6 @@ export class UsersService {
 
     return this.userRepository.update(id, user);
   }
+
+
 }
